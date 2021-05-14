@@ -12,6 +12,7 @@ def count(request):
             words[word]=1
         else:
             words[word]+=1
-    return render(request,'count.html',{'fulltext':fulltext,'count':len(wordlist),'worddict':words.items()})
+    dictionary=sorted(words.items(),reverse=False)
+    return render(request,'count.html',{'fulltext':fulltext,'count':len(wordlist),'worddict':dictionary})
 def about(request):
     return render(request,'about.html')
