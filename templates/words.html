@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <title>Result</title>
+    <title>Word Counter</title>
 </head>
 <style>
      body{
@@ -16,6 +16,7 @@
   .navbar {
     overflow: hidden;
     text-align: center;
+   
   }
   .navbar a {
     float: left;
@@ -67,22 +68,17 @@
   
 </style>
 <body>
+
     <div class="navbar">
         <a href="{% url 'home' %}"><img src="https://svgsilh.com/svg_v2/146017.svg" alt="" srcset="" width="70" height="20"></a>
         <a href="{% url 'about' %}">ABOUT</a>
         <a href="{% url 'words' %}">WORD COUNTER</a>
         <br><br>
     </div>
-    <h1><em><u>There Are {{count}} Words</u></em></h1>
-    <h2><u>Your Text</u></h2>
-    <h3>{{fulltext}}</h3>
-    <h1><u>Word Dictionary!!</u></h1>
-    {% for word,counttotal in worddict %}
-    <h2>{{word}}--{{counttotal}}</h2>
-    {% endfor %}
-    
+    <h2><u>Enter The Text In The Area Provided</u></h2>
+    <form action="{% url 'count' %}">
+        <textarea name="fulltext" cols="80" rows="10"></textarea><br><br>
+        <input type="submit" value="COUNT" id="design">
+    </form>    
 </body>
 </html>
-
-
-

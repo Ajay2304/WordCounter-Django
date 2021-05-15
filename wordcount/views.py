@@ -3,6 +3,8 @@ from django.shortcuts import render
 
 def homepage(request):
     return render(request, 'home.html' )
+def words(request):
+    return render(request,'words.html')
 def count(request):
     fulltext=request.GET['fulltext']
     wordlist=fulltext.split()
