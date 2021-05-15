@@ -57,14 +57,20 @@
     font-size: 12px;
     font-family: 'Ubuntu', sans-serif;
   }
-  .formelement{
-    border: 5px solid black;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-image: linear-gradient(#54e346,black);
-    font-family: 'Ubuntu', sans-serif;
-  }
-  
+  table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 </style>
 <body>
     <div class="navbar">
@@ -73,13 +79,30 @@
         <a href="{% url 'words' %}">WORD COUNTER</a>
         <br><br>
     </div>
-    <h1><em><u>There Are {{count}} Words</u></em></h1>
-    <h2><u>Your Text</u></h2>
-    <h3>{{fulltext}}</h3>
-    <h1><u>Word Dictionary!!</u></h1>
-    {% for word,counttotal in worddict %}
-    <h2>{{word}}--{{counttotal}}</h2>
-    {% endfor %}
+    <h2><u><em>FREQUENCY ANALYSIS</em></u></h2>
+        <table>
+            <tr>
+              <th>Number Of Words</th>
+              <th>Number Of Characters</th>
+            </tr>
+            <tr>
+              <td>{{count}}</td>
+              <td>{{counter}}</td>
+            </tr>
+          </table>
+        <h1><u><em>DICTIONARY WITH FREQUENCY</em></u></h1>
+        <table>
+            <tr>
+                <th>Word</th>
+                <th>Frequency</th>
+            </tr>
+              <tr>
+                {% for word,counttotal in worddict %}
+                <td>{{word}}</td>
+                <td>{{counttotal}}</td>
+              </tr>
+              {% endfor %}
+        </table>
     
 </body>
 </html>
