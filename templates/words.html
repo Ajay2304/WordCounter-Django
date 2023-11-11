@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Word Counter</title>
 </head>
 <style>
-    body{
-    font-family: 'Ubuntu', sans-serif;
-    color: black;
+     body{
+      font-family: 'Roboto', sans-serif;
+      color: black;
   }
   .navbar {
     overflow: hidden;
@@ -69,17 +69,17 @@
   
 </style>
 <body>
+
     <div class="navbar">
-        <a href="{% url 'home' %}"><img src="https://svgsilh.com/svg_v2/146017.svg" alt="" srcset="" width="70" height="20"></a>
+        <a href="{% url 'home' %}">HOME</a>
         <a href="{% url 'about' %}">ABOUT</a>
         <a href="{% url 'words' %}">WORD COUNTER</a>
         <br><br>
     </div>
-    <center>
-        <h1><u><em>WELCOME TO THIS WORD COUNT WEBSITE!!</em></u></h1>
-    </center>
-    <p>The Word Count Is The Number Of Words In A Document Or In A Passage Of Text. Word Counting May Be Needed When A Text Is Required To Stay Within Certain Numbers Of Words.Word Counts May Also Be Used To Calculate Measures Of Readability And To Measure Typing And Reading Speeds.In This Application,We Also Present The Dictionary Order of the words is also displayed. </p>
-    <img src="https://awario.com/upload/blog/trump-all-final.png?1547133106384" alt="word" width="750" height="330">
-    <img src="https://awario.com/upload/blog/trump-3.png?1547133212256" alt="word" width="730" height="330">
+    <h2><u>Enter the Text in the area provided</u></h2>
+    <form action="{% url 'count' %}">
+        <textarea name="fulltext" cols="80" rows="10" required></textarea><br><br>
+        <input type="submit" value="COUNT" id="design">
+    </form>    
 </body>
 </html>

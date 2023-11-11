@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <title>Result</title>
 </head>
 <style>
      body{
-    font-family: 'Ubuntu', sans-serif;
-    color: black;
+      font-family: 'Roboto', sans-serif;
+      color: black;
   }
   .navbar {
     overflow: hidden;
@@ -74,12 +75,12 @@ tr:nth-child(even) {
 </style>
 <body>
     <div class="navbar">
-        <a href="{% url 'home' %}"><img src="https://svgsilh.com/svg_v2/146017.svg" alt="" srcset="" width="70" height="20"></a>
+      <a href="{% url 'home' %}">HOME</a>
         <a href="{% url 'about' %}">ABOUT</a>
         <a href="{% url 'words' %}">WORD COUNTER</a>
         <br><br>
     </div>
-    <h2><u><em>FREQUENCY ANALYSIS</em></u></h2>
+    <h2><u>FREQUENCY ANALYSIS</u></h2>
         <table>
             <tr>
               <th>Number Of Words</th>
@@ -90,16 +91,16 @@ tr:nth-child(even) {
               <td>{{counter}}</td>
             </tr>
           </table>
-        <h1><u><em>DICTIONARY WITH FREQUENCY</em></u></h1>
+        <h1><u>DICTIONARY WITH FREQUENCY</u></h1>
         <table>
             <tr>
                 <th>Word</th>
                 <th>Frequency</th>
             </tr>
               <tr>
-                {% for word,counttotal in worddict %}
+                {% for word,count in worddictionary %}
                 <td>{{word}}</td>
-                <td>{{counttotal}}</td>
+                <td>{{count}}</td>
               </tr>
               {% endfor %}
         </table>
